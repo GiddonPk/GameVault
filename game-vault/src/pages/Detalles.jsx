@@ -46,7 +46,7 @@ function Detalles() {
 					</div>
 				</div>
 
-				<div className='flex gap-4 mt-4 border p-5 rounded border-white'>
+				<div className='flex flex-wrap gap-4 mt-4 border p-5 rounded border-white'>
 					<p>Plataformas:</p>
 					{juego["platforms"]?.map((platform) => (
 						<div key={platform.platform.id} className='flex items-center'>
