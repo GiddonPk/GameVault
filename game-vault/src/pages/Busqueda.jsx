@@ -64,7 +64,7 @@ export const Busqueda = () => {
 							value={filtro}
 							onChange={handleInputChange}
 							type='text'
-							placeholder='Escribe el título del juego...'
+							placeholder='Busca por titulo...'
 							className='w-full px-4 py-3 pl-12 pr-20 text-gray-700 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:border-transparent transition duration-300 ease-in-out dark:bg-stone-800 dark:text-gray-200 dark:border-white dark:focus:ring-amber-500'
 						/>
 						<button
