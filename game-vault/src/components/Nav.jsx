@@ -10,7 +10,7 @@ export const Nav = () => {
 
 						<Link
 							to='/'
-							className='text-xl font-bold text-white relative group'
+							className='font-bold text-white relative group'
 							aria-label='Ir a la página de inicio'
 						>
 							Inicio
@@ -19,7 +19,7 @@ export const Nav = () => {
 
 						<Link
 							to='/busqueda'
-							className='text-xl font-bold text-white relative group'
+							className='font-bold text-white relative group'
 							aria-label='Ir a la página de búsqueda'
 						>
 							Búsqueda
