@@ -16,6 +16,8 @@ const paginacion = "&page_size=50";
 const search = "?search=";
 
 
+// https://api.rawg.io/api/publishers?key=adcd050854f34145aedaeabed2f593d3&page_size=50
+
 export const getByGenero = async (genero) => {
     try {
         const respuesta = await fetch(`https://api.rawg.io/api/games?genres=${genero}&key=${miKey}` + paginacion);
@@ -61,6 +63,21 @@ export const getByTag = async (id) => {
 };
 
 
+
+export const getPublishers = async () => {
+	try {
+		const response = await fetch(urlPublishers + key + paginacion);
+		if (!response.ok) {
+			throw new Error(`Error al obtener publishers: ${response.statusText}`);
+		}
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error("Ocurrió un error al hacer fetch:", error);
+		throw error;
+	}
+};
+
 export const getPublisherDetails = async (id) => {
 	try {
 		const response = await fetch(urlPublishers2 + id + key);
@@ -80,20 +97,6 @@ export const getFilter = async (name) => {
 		const response = await fetch(url + search + name + paginacion + key2);
 		if (!response.ok) {
 			throw new Error(`Error al obtener juegos: ${response.statusText}`);
-		}
-		const data = await response.json();
-		return data;
-	} catch (error) {
-		console.error("Ocurrió un error al hacer fetch:", error);
-		throw error;
-	}
-};
-
-export const getPublishers = async () => {
-	try {
-		const response = await fetch(urlPublishers + key);
-		if (!response.ok) {
-			throw new Error(`Error al obtener publishers: ${response.statusText}`);
 		}
 		const data = await response.json();
 		return data;
