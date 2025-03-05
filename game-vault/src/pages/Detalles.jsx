@@ -4,6 +4,8 @@ import { useLoaderData } from "react-router";
 import { useEffect, useState } from "react";
 import { getById } from "../services/fetch";
 
+import { Link } from "react-router";
+
 export async function loader({ params }) {
 	const id = params.id;
 	return { id };
@@ -50,7 +52,25 @@ function Detalles() {
 					<p>Plataformas:</p>
 					{juego["platforms"]?.map((platform) => (
 						<div key={platform.platform.id} className='flex items-center'>
-							<p className='ml-2 text-sm text-amber-200'>{platform.platform.name}</p>
+							<Link to={`/plataforma/${platform.platform.id}`}  state={{ nombre: platform.platform.name }}  className='ml-2 text-sm text-amber-200'>{platform.platform.name}</Link>
+						</div>
+					))}
+				</div>
+
+				<div className='flex flex-wrap gap-4 mt-4 border p-5 rounded border-white'>
+					<p>Géneros:</p>
+					{juego["genres"]?.map((genres) => (
+						<div key={genres.id} className='flex items-center'>
+							<Link to={`/genero/${genres.id}`}  state={{ nombre: genres.name}}  className='ml-2 text-sm text-amber-200'>{genres.name}</Link>
+						</div>
+					))}
+				</div>
+
+				<div className='flex flex-wrap gap-4 mt-4 border p-5 rounded border-white'>
+					<p>Tags:</p>
+					{juego["tags"]?.map((tag) => (
+						<div key={tag['id']} className='flex items-center'>
+							<Link to={`/tag/${tag['id']}`} state={{ nombre: tag['name']}} className='ml-2 text-sm text-amber-200'>{tag["name"]}</Link>
 						</div>
 					))}
 				</div>

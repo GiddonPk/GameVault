@@ -25,6 +25,15 @@ export const Nav = () => {
 							Búsqueda
 							<span className='absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:shadow-lg group-hover:shadow-amber-400/60'></span>
 						</Link>
+
+						<Link
+							to='/publishers'
+							className='font-bold text-white relative group'
+							aria-label='Ir a la página de publishers'
+						>
+							Publishers
+							<span className='absolute left-0 bottom-0 w-full h-0.5 bg-transparent transition-all duration-300 group-hover:shadow-lg group-hover:shadow-amber-400/60'></span>
+						</Link>
 					</div>
 				</div>
 			</nav>

@@ -1,6 +1,4 @@
 import React from "react";
-import { Nav } from "../components/Nav";
-import { Footer } from "../components/Footer";
 import { getBest } from "../services/fetch";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
