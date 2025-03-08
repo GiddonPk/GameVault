@@ -46,7 +46,6 @@ export const getByPlat = async (plataforma) => {
 		throw error;
 	}
 };
-// https://api.rawg.io/api/games?tags=1&key=adcd050854f34145aedaeabed2f593d3`
 // Tags
 export const getByTag = async (id) => {
 	try {
@@ -61,8 +60,6 @@ export const getByTag = async (id) => {
 		throw error;
 	}
 };
-
-
 
 export const getPublishers = async () => {
 	try {

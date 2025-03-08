@@ -22,6 +22,10 @@ import { Footer } from "./components/Footer";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
+import { Provider } from "react-redux";
+import { store } from "./store"; // Asegúrate de importar el store correctamente
+
+
 import "./App.css";
 
 function AppLayout() {
@@ -74,13 +78,15 @@ const router = createBrowserRouter([
 				path: "/tag/:id",
 				element: <Tags />,
 				loader: tagsLoader,
-			}
+			},
 		],
 	},
 ]);
 
 createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
 	</React.StrictMode>
 );
